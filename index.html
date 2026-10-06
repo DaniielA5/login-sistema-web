@@ -27,21 +27,74 @@
             </div>
         </nav>
 
-        <div class="d-flex" id="contenedor">
-            <!-- --------  CHAY   -->
-            <aside id="sidebar"></aside>
-            <!--   EN DONDE DEBE ir menu , inicio, usuario , ( submenu captura) y alumnos -->
+            <div class="d-flex" id="contenedor">
+
+        <!-- =====================================================
+            CHAY         SIDEBAR
+             
+            
+            
+            TAREA: construir el menú lateral dentro del <aside>.
+             - Opciones: Inicio, Usuarios y Alumnos.
+             - "Usuarios" debe desplegar un submenú con la opción "Captura".
+               (Pista: Bootstrap ya trae "collapse", busca data-bs-toggle="collapse")
+             - Cada opción que muestre una sección lleva un atributo data-seccion
+               con el id de esa sección. Ejemplo: data-seccion="seccion-alumnos"
+             - NO quites id="sidebar": el CSS y el JS lo usan.
+             ===================================================== -->
+        <aside id="sidebar">
+        </aside>
+
+        <main id="contenido" class="flex-grow-1 p-4">
+
+            <section id="seccion-inicio" class="seccion">
+                <h2>Bienvenido al sistema</h2>
+                <p>Selecciona una opción del menú lateral.</p>
+            </section>
+
+            <!-- =====================================================
+                CHAY       SECCIÓN CAPTURA DE USUARIOS
 
 
-            <main id="contenido" class="flex-grow-1 p-4">
-                <section id="seccion-inicio" class="seccion">
-                    <h2>Bienvenido al sistema</h2>
-                    <p>Seleccion una opcion del menu lateraln </p>
-                </section>
+                 TAREA: formulario con nombre de usuario, correo electrónico y contraseña.
+                 - Validar con validarCorreo() y validarPassword() de utileria.js
+                 - Mostrar el error debajo de cada campo (mira cómo lo hice en login.html:
+                   clases is-invalid e invalid-feedback de Bootstrap)
+                 - Poner novalidate en el <form> para que validen tus funciones
+                 - Si todo es válido, mostrar un mensaje de éxito
+                 ===================================================== -->
+            <section id="seccion-captura" class="seccion d-none">
+            </section>
 
-                <section id="seccion-alumnos" class="seccion d-none"></section>
-            </main>
-        </div>
+            <!-- =====================================================
+                 CHAY               SECCIÓN ALUMNOS
+
+
+
+                 TAREA: formulario con nombre, número de control y fecha de nacimiento.
+                 - Nombre: validar con soloLetras()
+                 - Número de control: exactamente 6 dígitos, solo números.
+                   OJO: validarLongitud() solo revisa un MÁXIMO. Para pedir
+                   exactamente 6 tienes que comprobar también la longitud mínima.
+                 - Fecha de nacimiento: sirve para calcular la edad en el modal
+                 - Si todo es válido, abrir el modal de edad (ver más abajo)
+                 ===================================================== -->
+            <section id="seccion-alumnos" class="seccion d-none">
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =====================================================
+        CHAY            MODAL DE EDAD
+
+
+        
+         TAREA: modal de Bootstrap (class="modal fade", id="modalEdad") que muestre:
+         nombre del alumno, número de control, edad y si es mayor de edad o no.
+         - Usar calcularEdad() y esMayorDeEdad() de utileria.js
+         - Para abrirlo desde JS, busca "new bootstrap.Modal" en la documentación de Bootstrap
+         ===================================================== -->
 
         <!-- chay -->
         <!--   modal edad  -->
