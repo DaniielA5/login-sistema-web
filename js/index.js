@@ -25,6 +25,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // TAREA 1: botón hamburguesa
+    const btnHamburguesa = document.getElementById("btnHamburguesa");
+    const sidebar = document.getElementById("sidebar");
+
+    if (btnHamburguesa && sidebar) {
+        btnHamburguesa.addEventListener("click", () => {
+         sidebar.classList.toggle("d-none");
+        });
+    }
 
     // TAREA 2: navegación entre secciones
 

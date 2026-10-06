@@ -10,7 +10,7 @@
     </head>
         <nav class="navbar navbar-dark bg-dark sticky-top px-3">
             <div class="d-flex align-items-center">
-                <button class="navbar-toggler me-3" type="button" id="btnHamburg" aria-label="Abrir/cerrar menu">
+                <button class="navbar-toggler me-3" type="button" id="btnHamburguesa" aria-label="Abrir/cerrar menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <span class="navbar-brand mb-0 h1">Sistema Actividad 5</span>
@@ -31,9 +31,7 @@
 
         <!-- =====================================================
             CHAY         SIDEBAR
-             
-            
-            
+
             TAREA: construir el menú lateral dentro del <aside>.
              - Opciones: Inicio, Usuarios y Alumnos.
              - "Usuarios" debe desplegar un submenú con la opción "Captura".
@@ -42,8 +40,31 @@
                con el id de esa sección. Ejemplo: data-seccion="seccion-alumnos"
              - NO quites id="sidebar": el CSS y el JS lo usan.
              ===================================================== -->
+
+             
         <aside id="sidebar">
-        </aside>
+            <div class="p-3 bg-light border-end" style="width: 250px; min-height: 100vh;">
+                <ul class="nav flex-column">
+                     <li class="nav-item mb-2">
+                        <a href="#" class="nav-link text-dark" data-seccion="seccion-inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                    <!-- Opción Usuarios con submenú desplegable -->
+                     <a href="#menuUsuariosSub" class="nav-link text-dark d-flex justify-content-between align-items-center" data-bs-toggle="collapse" aria-expanded="false">
+                        Usuarios <span>▼</span>
+                    </a>
+                    <ul class="collapse list-unstyled ps-3 mt-1" id="menuUsuariosSub">
+                        <li>
+                            <a href="#" class="nav-link text-secondary" data-seccion="seccion-captura">Captura</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2">
+                     <a href="#" class="nav-link text-dark" data-seccion="seccion-alumnos">Alumnos</a>
+                    </li>
+                </ul>
+            </div>
+    </aside>
 
         <main id="contenido" class="flex-grow-1 p-4">
 
