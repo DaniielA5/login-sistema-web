@@ -35,6 +35,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // TAREA 2: navegación entre secciones
+    const enlacesMenu = document.querySelectorAll("#sidebar [data-seccion]");
+    const secciones = document.querySelectorAll(".seccion");
+
+    enlacesMenu.forEach(enlace => {
+        enlace.addEventListener("click", (e) => {
+            e.preventDefault(); // Evita que la página recargue o brinque
+            
+            const seccionDestino = enlace.getAttribute("data-seccion");
+
+            secciones.forEach(seccion => {
+                if (seccion.id === seccionDestino) {
+                    seccion.classList.remove("d-none"); // Muestra la sección correcta
+                } else {
+                    seccion.classList.add("d-none");    // Oculta las demás
+                }
+            });
+        });
+    });
 
     // TAREA 3: formulario de captura de usuarios
 

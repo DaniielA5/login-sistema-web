@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/index.css">
 
     </head>
+    <body>
         <nav class="navbar navbar-dark bg-dark sticky-top px-3">
             <div class="d-flex align-items-center">
                 <button class="navbar-toggler me-3" type="button" id="btnHamburguesa" aria-label="Abrir/cerrar menu">
@@ -27,11 +28,9 @@
             </div>
         </nav>
 
-            <div class="d-flex" id="contenedor">
-
+            <div class="d-flex" id="contenedor"> 
         <!-- =====================================================
-            CHAY         SIDEBAR
-
+            CHAY         SIDEBAR 
             TAREA: construir el menú lateral dentro del <aside>.
              - Opciones: Inicio, Usuarios y Alumnos.
              - "Usuarios" debe desplegar un submenú con la opción "Captura".
@@ -39,9 +38,7 @@
              - Cada opción que muestre una sección lleva un atributo data-seccion
                con el id de esa sección. Ejemplo: data-seccion="seccion-alumnos"
              - NO quites id="sidebar": el CSS y el JS lo usan.
-             ===================================================== -->
-
-             
+             ===================================================== -->          
         <aside id="sidebar">
             <div class="p-3 bg-light border-end" style="width: 250px; min-height: 100vh;">
                 <ul class="nav flex-column">
@@ -74,9 +71,7 @@
             </section>
 
             <!-- =====================================================
-                CHAY       SECCIÓN CAPTURA DE USUARIOS
-
-
+                CHAY       SECCIÓN CAPTURA DE USUARIOS 
                  TAREA: formulario con nombre de usuario, correo electrónico y contraseña.
                  - Validar con validarCorreo() y validarPassword() de utileria.js
                  - Mostrar el error debajo de cada campo (mira cómo lo hice en login.html:
@@ -85,7 +80,29 @@
                  - Si todo es válido, mostrar un mensaje de éxito
                  ===================================================== -->
             <section id="seccion-captura" class="seccion d-none">
-            </section>
+                <div class="card shadow p-4">
+                    <h3 class="mb-3">Captura de Usuarios</h3>
+                    <form id="formCapturaUsuario" novalidate>
+                <div class="mb-3">
+                    <label for="nombreCap" class="form-label">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="nombreCap" required>
+                    <div class="invalid-feedback">Por favor ingresa un nombre válido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="correoCap" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correoCap" required>
+                    <div class="invalid-feedback" id="errorCorreoCap">Correo inválido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="passCap" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="passCap" required>
+                    <div class="invalid-feedback" id="errorPassCap">Contraseña inválida.</div>
+                </div>
+                <div class="alert alert-success d-none" id="exitoCaptura">¡Usuario guardado con éxito!</div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </section>
 
             <!-- =====================================================
                  CHAY               SECCIÓN ALUMNOS
@@ -119,11 +136,9 @@
 
         <!-- chay -->
         <!--   modal edad  -->
-        <script src=""></script>
-        <script src="js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>      
         <script src="https://cdn.jsdelivr.net/gh/DaniielA5/utileria-js@main/js/utileria.js"></script>
-        
-    <body>
-
+        <script src="js/index.js"></script>
+    
     </body>
 </html>
