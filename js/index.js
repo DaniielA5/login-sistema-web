@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (btnHamburguesa && sidebar) {
         btnHamburguesa.addEventListener("click", () => {
-         sidebar.classList.toggle("d-none");
+         sidebar.classList.toggle("oculto");
         });
     }
 
