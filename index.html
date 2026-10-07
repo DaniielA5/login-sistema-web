@@ -29,16 +29,10 @@
         </nav>
 
             <div class="d-flex" id="contenedor"> 
-        <!-- =====================================================
-            CHAY         SIDEBAR 
-            TAREA: construir el menú lateral dentro del <aside>.
+        <!-- SIDEBAR 
+             - Construye el menú lateral dentro del <aside>.
              - Opciones: Inicio, Usuarios y Alumnos.
-             - "Usuarios" debe desplegar un submenú con la opción "Captura".
-               (Pista: Bootstrap ya trae "collapse", busca data-bs-toggle="collapse")
-             - Cada opción que muestre una sección lleva un atributo data-seccion
-               con el id de esa sección. Ejemplo: data-seccion="seccion-alumnos"
-             - NO quites id="sidebar": el CSS y el JS lo usan.
-             ===================================================== -->          
+             - "Usuarios" despliega un submenú con la opción "Captura".  -->          
         <aside id="sidebar" class="oculto">
             <div class="p-3 bg-light border-end">
                 <ul class="nav flex-column">
@@ -70,15 +64,8 @@
                 <p>Selecciona una opción del menú lateral.</p>
             </section>
 
-            <!-- =====================================================
-                CHAY       SECCIÓN CAPTURA DE USUARIOS 
-                 TAREA: formulario con nombre de usuario, correo electrónico y contraseña.
-                 - Validar con validarCorreo() y validarPassword() de utileria.js
-                 - Mostrar el error debajo de cada campo (mira cómo lo hice en login.html:
-                   clases is-invalid e invalid-feedback de Bootstrap)
-                 - Poner novalidate en el <form> para que validen tus funciones
-                 - Si todo es válido, mostrar un mensaje de éxito
-                 ===================================================== -->
+            <!-- SECCIÓN CAPTURA DE USUARIOS 
+                 - Formulario con nombre de usuario, correo electrónico y contraseña. -->
             <section id="seccion-captura" class="seccion d-none">
                 <div class="card shadow p-4">
                     <h3 class="mb-3">Captura de Usuarios</h3>
@@ -104,16 +91,8 @@
         </div>
     </section>
 
-            <!-- =====================================================
-                 CHAY               SECCIÓN ALUMNOS 
-                 TAREA: formulario con nombre, número de control y fecha de nacimiento.
-                 - Nombre: validar con soloLetras()
-                 - Número de control: exactamente 6 dígitos, solo números.
-                   OJO: validarLongitud() solo revisa un MÁXIMO. Para pedir
-                   exactamente 6 tienes que comprobar también la longitud mínima.
-                 - Fecha de nacimiento: sirve para calcular la edad en el modal
-                 - Si todo es válido, abrir el modal de edad (ver más abajo)
-                 ===================================================== -->
+            <!-- SECCIÓN ALUMNOS 
+                 - Formulario con nombre, número de control y fecha de nacimiento. -->
             <section id="seccion-alumnos" class="seccion d-none">
                 <div class="card shadow p-4">
                     <h3 class="mb-3">Registro de Alumnos</h3>
@@ -142,13 +121,9 @@
         </main>
     </div>
 
-    <!-- =====================================================
-        CHAY            MODAL DE EDAD 
-         TAREA: modal de Bootstrap (class="modal fade", id="modalEdad") que muestre:
-         nombre del alumno, número de control, edad y si es mayor de edad o no.
-         - Usar calcularEdad() y esMayorDeEdad() de utileria.js
-         - Para abrirlo desde JS, busca "new bootstrap.Modal" en la documentación de Bootstrap
-         ===================================================== --> 
+    <!-- MODAL DE EDAD 
+         - Modal de Bootstrap (class="modal fade", id="modalEdad") muestra:
+           nombre del alumno, número de control, edad y si es mayor de edad o no. --> 
          <div class="modal fade" id="modalEdad" tabindex="-1" aria-labelledby="modalEdadLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -169,6 +144,7 @@
         </div>
     </div>
 
+        <!-- Cargar componentes de Bootstrap, utileria, logica del sistema y script para control de usuarios-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>      
         <script src="https://cdn.jsdelivr.net/gh/DaniielA5/utileria-js@main/js/utileria.js"></script>
         <script src="js/index.js"></script>

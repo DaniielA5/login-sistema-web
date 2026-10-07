@@ -1,5 +1,5 @@
-   /*TAREAS (un commit por cada una):
-    1. SIDEBAR: darle un ancho fijo (ej. 240px) y una transición suave.*/
+
+    /*1. SIDEBAR: darle un ancho fijo (240px) y una transición suave.*/
    #sidebar {
     width: 240px;
     min-height: calc(100vh - 56px);
@@ -8,19 +8,19 @@
     flex-shrink: 0;
 }
  
-   /*2. OCULTAR: crear una clase (ej. .oculto) que esconda el sidebar
-      sacándolo de pantalla. La usa el botón hamburguesa desde index.js.*/
-#sidebar.oculto {
+   /*2. Clase oculto para el botón hamburguesa que esconde el sidebar
+      sacándolo de pantalla.*/
+      #sidebar.oculto {
     margin-left: -240px;
 }
-   /*3. CONTENIDO: que #contenedor mida al menos el alto de la pantalla
-      menos el navbar (aprox. 56px). Pista: calc() y 100vh.*/
+
+   /*3. El contenedor principal mide el alto de la pantalla menos el navbar (aprox. 56px)*/
       #contenedor {
     min-height: calc(100vh - 56px);
     flex-grow: 1;
 }
 
-   /*4. RESPONSIVE: en pantallas chicas, que el sidebar no empuje el contenido.*/
+   /*4. Responsive para pantallas pequeñas (móviles)*/
    @media (max-width: 768px) {
     #sidebar {
         position: absolute;
