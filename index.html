@@ -105,10 +105,7 @@
     </section>
 
             <!-- =====================================================
-                 CHAY               SECCIÓN ALUMNOS
-
-
-
+                 CHAY               SECCIÓN ALUMNOS 
                  TAREA: formulario con nombre, número de control y fecha de nacimiento.
                  - Nombre: validar con soloLetras()
                  - Número de control: exactamente 6 dígitos, solo números.
@@ -118,6 +115,28 @@
                  - Si todo es válido, abrir el modal de edad (ver más abajo)
                  ===================================================== -->
             <section id="seccion-alumnos" class="seccion d-none">
+                <div class="card shadow p-4">
+                    <h3 class="mb-3">Registro de Alumnos</h3>
+                    <form id="formAlumno" novalidate>
+                        <div class="mb-3">
+                            <label for="nombreAlumno" class="form-label">Nombre del alumno</label>
+                            <input type="text" class="form-control" id="nombreAlumno" required>
+                            <div class="invalid-feedback">Solo se permiten letras en el nombre.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="numControl" class="form-label">Número de control (6 dígitos)</label>
+                            <input type="text" class="form-control" id="numControl" required>
+                            <div class="invalid-feedback">Debe ser un número de exactamente 6 dígitos.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimiento" required>
+                            <div class="invalid-feedback">Por favor selecciona una fecha válida.</div>
+                        </div>
+                        <div class="alert alert-success d-none" id="exitoAlumno">¡Formulario de alumno válido!</div>
+                        <button type="submit" class="btn btn-primary">Validar Alumno</button>
+                    </form>
+                </div>
             </section>
 
         </main>

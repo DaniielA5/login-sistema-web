@@ -107,6 +107,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // TAREA 4: formulario de alumnos
+    const formAlumno = document.getElementById("formAlumno");
+    const nombreAlumno = document.getElementById("nombreAlumno");
+    const numControl = document.getElementById("numControl");
+    const fechaNacimiento = document.getElementById("fechaNacimiento");
+    const exitoAlumno = document.getElementById("exitoAlumno");
+
+    if (formAlumno) {
+        formAlumno.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let todoValido = true;
+
+            // 1. Validar nombre con soloLetras() de utileria.js
+            if (typeof soloLetras === "function" && !soloLetras(nombreAlumno.value)) {
+                nombreAlumno.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                nombreAlumno.classList.remove("is-invalid");
+                nombreAlumno.classList.add("is-valid");
+            }
+
+            // 2. Validar número de control (exactamente 8 dígitos, solo números)
+            // Siguiendo la nota: si validarLongitud es de máximo, validamos que su largo sea exactamente 6 y sean puros números
+            const valorControl = numControl.value.trim();
+            const esSoloNumeros = /^\d+$/.test(valorControl);
+            const tieneOchoDigitos = valorControl.length === 8;
+
+            if (!esSoloNumeros || !tieneOchoDigitos) {
+                numControl.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                numControl.classList.remove("is-invalid");
+                numControl.classList.add("is-valid");
+            }
+
+            // 3. Validar fecha de nacimiento (que no esté vacía)
+            if (fechaNacimiento.value.trim() === "") {
+                fechaNacimiento.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                fechaNacimiento.classList.remove("is-invalid");
+                fechaNacimiento.classList.add("is-valid");
+            }
+
+            // Si todo es válido (por ahora mostramos éxito)
+            if (todoValido) {
+                exitoAlumno.classList.remove("d-none");
+            } else {
+                exitoAlumno.classList.add("d-none");
+            }
+        });
+    }
 
     // TAREA 5: modal de edad
 
