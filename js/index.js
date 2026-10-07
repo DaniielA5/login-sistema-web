@@ -113,6 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const fechaNacimiento = document.getElementById("fechaNacimiento");
     const exitoAlumno = document.getElementById("exitoAlumno");
 
+    // Elementos del modal (para la Tarea 5)
+    const lblNombre = document.getElementById("lblNombre");
+    const lblControl = document.getElementById("lblControl");
+    const lblEdad = document.getElementById("lblEdad");
+    const lblEstatus = document.getElementById("lblEstatus");
+
     if (formAlumno) {
         formAlumno.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -128,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // 2. Validar número de control (exactamente 8 dígitos, solo números)
-            // Siguiendo la nota: si validarLongitud es de máximo, validamos que su largo sea exactamente 6 y sean puros números
+            // validamos que su largo sea exactamente 6 y sean puros números
             const valorControl = numControl.value.trim();
             const esSoloNumeros = /^\d+$/.test(valorControl);
             const tieneOchoDigitos = valorControl.length === 8;
@@ -149,16 +155,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 fechaNacimiento.classList.remove("is-invalid");
                 fechaNacimiento.classList.add("is-valid");
             }
+ 
 
-            // Si todo es válido (por ahora mostramos éxito)
+    // TAREA 5: modal de edad
+
+            // Si todo es válido, calculamos datos y abrimos el modal
             if (todoValido) {
-                exitoAlumno.classList.remove("d-none");
+               
+                // Usamos las funciones de utileria.js para calcular edad y estatus
+                const edadCalculada = calcularEdad(fechaNacimiento.value);
+                const esMayor = esMayorDeEdad(fechaNacimiento.value);
+
+                // Llenamos los datos dentro del modal
+                lblNombre.textContent = nombreAlumno.value;
+                lblControl.textContent = numControl.value;
+                lblEdad.textContent = edadCalculada;
+                lblEstatus.textContent = esMayor ? "Mayor de edad" : "Menor de edad";
+
+                // Abrimos el modal de Bootstrap usando JavaScript
+                const modalElement = document.getElementById("modalEdad");
+                const modalEdad = new bootstrap.Modal(modalElement);
+                modalEdad.show();
+
+                // Limpiar formulario y bordes verdes después de abrir
+                formAlumno.reset();
+                exitoAlumno.classList.add("d-none");
+                nombreAlumno.classList.remove("is-valid");
+                numControl.classList.remove("is-valid");
+                fechaNacimiento.classList.remove("is-valid");
             } else {
                 exitoAlumno.classList.add("d-none");
             }
         });
-    }
-
-    // TAREA 5: modal de edad
-
+    } 
+ 
 });
