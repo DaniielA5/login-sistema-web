@@ -34,6 +34,9 @@ function marcarCampo(input, divError, esValido, mensaje) {
             return;
         }
 
-        console.log("Login correcto");
+        sessionStorage.setItem("usuarioNombre", USUARIO_FIJO.nombre);
+        sessionStorage.setItem("usuarioCorreo", correo);
+
+        window.location.href = "index.html";
     })
 }
