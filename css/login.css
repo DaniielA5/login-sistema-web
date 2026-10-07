@@ -1,0 +1,29 @@
+body {
+    background:linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) fixed;
+
+}
+
+.card {
+    border : 0 ;
+    border: 12px;
+
+}
+
+.card h1 {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.btn-primary {
+    --bs-btn-bg: #4f46e5;
+    --bs-btn-border-color: #4f46e5;
+    --bs-btn-hover-bg: #4338ca ;
+    --bs-btn-hover-border-color: #4338ca ;
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-active-border-color: #3730a3;
+}
+
+.form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
