@@ -1,5 +1,5 @@
 const USUARIO_FIJO = {
-    correo: "Camaron@gmail.com",
+    correo: "camaron@gmail.com",
     password:"Camaron123!",
     nombre: "Administrador"
 };
@@ -11,10 +11,14 @@ const errorCorreo = document.getElementById("errorLoginCorreo");
 const errorPassword = document.getElementById("errorLoginPassword");
 const mensajeLogin = document.getElementById("mensajeLogin");
 
-function marcarCampo(input, divError, esValido, mensaje) { 
-    input.classList.toggle("submit", function(event) {
+function marcarCampo(input, divError, esValido, mensaje) {
+    input.classList.toggle("is-invalid", !esValido);
+    divError.textContent = esValido ? "" : mensaje; 
+}    
+
+formLogin.addEventListener("submit", function (event) {
         event.preventDefault();
-        const correo = inputCorreo.ariaValueMax.trim();
+        const correo = inputCorreo.value.trim();
         const password = inputPassword.value;
 
         const correoOk = validarCorreo(correo);
@@ -38,5 +42,4 @@ function marcarCampo(input, divError, esValido, mensaje) {
         sessionStorage.setItem("usuarioCorreo", correo);
 
         window.location.href = "index.html";
-    })
-}
+    });
