@@ -4,17 +4,18 @@
    
    TAREAS (un commit por cada una):
    /*1. SIDEBAR: darle un ancho fijo (ej. 240px) y una transición suave.*/
-   sidebar {
+   #sidebar {
     width: 240px;
     min-height: calc(100vh - 56px);
     transition: all 0.3s ease-in-out;
     background-color: #f8f9fa;
     flex-shrink: 0;
 }
+ 
+   /*2. OCULTAR: crear una clase (ej. .oculto) que esconda el sidebar
+      sacándolo de pantalla. La usa el botón hamburguesa desde index.js.*/
 
-/* 
-   2. OCULTAR: crear una clase (ej. .oculto) que esconda el sidebar
-      sacándolo de pantalla. La usa el botón hamburguesa desde index.js.
+/*
    3. CONTENIDO: que #contenedor mida al menos el alto de la pantalla
       menos el navbar (aprox. 56px). Pista: calc() y 100vh.
    4. RESPONSIVE: en pantallas chicas, que el sidebar no empuje el contenido.
