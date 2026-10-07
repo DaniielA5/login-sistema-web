@@ -55,6 +55,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // TAREA 3: formulario de captura de usuarios
+    const formCapturaUsuario = document.getElementById("formCapturaUsuario");
+    const nombreCap = document.getElementById("nombreCap");
+    const correoCap = document.getElementById("correoCap");
+    const passCap = document.getElementById("passCap");
+    const exitoCaptura = document.getElementById("exitoCaptura");
+
+    if (formCapturaUsuario) {
+        formCapturaUsuario.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let todoValido = true;
+
+            // 1. Validar nombre (que no esté vacío)
+            if (nombreCap.value.trim() === "") {
+                nombreCap.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                nombreCap.classList.remove("is-invalid");
+                nombreCap.classList.add("is-valid");
+            }
+
+            // 2. Validar correo usando la función de utileria.js
+            if (typeof validarCorreo === "function" && !validarCorreo(correoCap.value)) {
+                correoCap.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                correoCap.classList.remove("is-invalid");
+                correoCap.classList.add("is-valid");
+            }
+
+            // 3. Validar contraseña usando la función de utileria.js
+            if (typeof validarPassword === "function" && !validarPassword(passCap.value)) {
+                passCap.classList.add("is-invalid");
+                todoValido = false;
+            } else {
+                passCap.classList.remove("is-invalid");
+                passCap.classList.add("is-valid");
+            }
+
+            // Si todo el formulario es válido
+            if (todoValido) {
+                exitoCaptura.classList.remove("d-none");
+                formCapturaUsuario.reset();
+                nombreCap.classList.remove("is-valid");
+                correoCap.classList.remove("is-valid");
+                passCap.classList.remove("is-valid");
+            } else {
+                exitoCaptura.classList.add("d-none");
+            }
+        });
+    }
 
     // TAREA 4: formulario de alumnos
 
