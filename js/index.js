@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // validamos que su largo sea exactamente 6 y sean puros números
             const valorControl = numControl.value.trim();
             const esSoloNumeros = /^\d+$/.test(valorControl);
-            const tieneOchoDigitos = valorControl.length === 8;
+            const tieneOchoDigitos = valorControl.length === 6;
 
             if (!esSoloNumeros || !tieneOchoDigitos) {
                 numControl.classList.add("is-invalid");
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Si todo es válido, calculamos datos y abrimos el modal
             if (todoValido) {
-               
+
                 // Usamos las funciones de utileria.js para calcular edad y estatus
                 const edadCalculada = calcularEdad(fechaNacimiento.value);
                 const esMayor = esMayorDeEdad(fechaNacimiento.value);
