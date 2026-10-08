@@ -198,7 +198,7 @@ Integración del formulario de captura para alumnos con sus respectivas validaci
 ### Paso 12: Modal de edad
 Una vez validado el formulario, se procesa la fecha de nacimiento mediante las funciones `calcularEdad()` y `esMayorDeEdad()`. Los resultados se inyectan en tiempo real dentro de un Modal de Bootstrap, mostrando de forma visual los datos calculados al usuario.
 
-![Modal de edad](img/10-Modal de edad.png)
+![Modal de edad](img/10-ModalDeEdad.png)
 
 ---
 
