@@ -25,3 +25,13 @@
         margin-left: -240px;
     }
 }
+
+.btn-primary {
+    --bs-btn-bg: #4f46e5;
+    --bs-btn-border-color: #4f46e5;
+    --bs-btn-hover-bg: #4338ca;
+    --bs-btn-hover-border-color: #4338ca;
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-active-border-color: #3730a3;
+    --bs-btn-focus-shadow-rgb: 79, 70, 229;
+}
