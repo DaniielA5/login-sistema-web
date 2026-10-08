@@ -178,28 +178,27 @@ El dropdown del navbar incluye **Salir del sistema**, que borra las dos claves d
 ![Dropdown con Salir](img/05-dropdown-salir.png)
 
 ## Parte de Isaac
-
->   CHAY completar cada paso con 2 o 3 líneas explicando como se hizo  y una captura.
-
+ 
 ### Paso 9: Sidebar y botón hamburguesa
 Se diseñó un menú lateral (`#sidebar`) con ancho fijo y transición suave en `index.css`. Se programó el botón hamburguesa en `js/index.js` para alternar la clase `.oculto` mediante eventos de click, logrando un comportamiento completamente responsive.
 
-![Sidebar con submenú](img/06-sidebar-submenu.png)
+![Sidebar con submenú](img/06-Sidebar.png)
 
 ### Paso 10: Formulario de Captura de usuarios
 Se estructuró el formulario de captura de usuarios conectándolo con las funciones `validarCorreo( ` y `validarPassword()` de la librería `utileria.js`, asegurando la verificación y validación del correo y la contraseña en tiempo real.
 
-![Formulario de captura](img/07-captura.png)
+![Validaciones captura](img/07-Usuarios-Incorrecto.png)
+![Formulario de captura](img/08-Usuarios.png)
 
 ### Paso 11: Formulario de Alumnos y número de control
 Integración del formulario de captura para alumnos con sus respectivas validaciones, implementando la funcion `soloLetras` de la librería `utileria.js` y se hizo una validación estricta que contenga solo 6 digitos para el número de control.
 
-![Número de control](img/08-alumnos-control.png)
+![Número de control](img/09-Alumnos-incorrecto.png)
 
 ### Paso 12: Modal de edad
 Una vez validado el formulario, se procesa la fecha de nacimiento mediante las funciones `calcularEdad()` y `esMayorDeEdad()`. Los resultados se inyectan en tiempo real dentro de un Modal de Bootstrap, mostrando de forma visual los datos calculados al usuario.
 
-![Modal de edad](img/09-modal-edad.png)
+![Modal de edad](img/10-Modal de edad.png)
 
 ---
 
